@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as action from '../constants/productConstant'
 
-const url = 'http://localhost:8000';
+const url = 'https://boopalanecommerceserver.herokuapp.com/';
 
 export const getProducts = () => async (dispatch) => {
 
