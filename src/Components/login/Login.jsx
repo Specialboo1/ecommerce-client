@@ -129,7 +129,7 @@ const Login = ({open, setOpen, setAccount}) =>
             {
                 account.view === 'login' ?
             <Box className={classes.login}>
-                <TextField onChange={(e) => onValueChange(e)} name='username' label="Enter Email/Mobile number" variant="standard"/>
+                <TextField onChange={(e) => onValueChange(e)} name='username' label="Enter Username" variant="standard"/>
                 <TextField onChange={(e) => onValueChange(e)} name='password' label="Enter Password" variant="standard"/>
                 
                 {error && <Typography style={{fontSize: 12, color: '#ff6161', marginTop: 0, fontWeight: 600}}
