@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Topbar from './Components/Topbar/Topbar'
+import Home from './Components/Home/Home'
+import Cart from './Components/Cart/cart'
+import TemplateProvider from './templates/TemplateProvider';
+import DataContextProvider from './Context/DataProvider';
+import DetailView from './Components/product/DetailView';
+import {Box} from '@mui/material'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <TemplateProvider>    
+      <Router>      
+      <Switch>
+      <DataContextProvider>      
+      <Topbar/>
+      <Box style ={{marginTop : 54}}>
+      <Route path="/" component={Home} exact/>
+      <Route path="/cart" component={Cart} exact/>
+      <Route path="/product/:id" component={DetailView} exact/>
+      </Box>      
+      </DataContextProvider>
+      </Switch>
+      </Router>      
+    </TemplateProvider>
+    
   );
 }
 
