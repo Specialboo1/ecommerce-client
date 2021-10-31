@@ -2,7 +2,7 @@ import axios from 'axios';
 import * as actionTypes from '../constants/cartConstant'
 
 
-const url = 'http://localhost:8000';
+const url = 'https://boopalanecommerceserver.herokuapp.com/';
 
 export const addtoCart = (id) => async (dispatch) => {
 
